@@ -1,3 +1,5 @@
+![main](https://github.com/tryoutchen/qemu-rpi-arm64/actions/workflows/main.yml/badge.svg?branch=main)
+
 # Instructions of running Aarch64 Raspberry Pi image with Qemu
 
 
