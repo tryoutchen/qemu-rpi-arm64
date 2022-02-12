@@ -12,16 +12,17 @@ $ export PATH=$PATH:`pwd`/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu/bin
 
 
 
-## Download & Cross-compile Linux Kernel
+## Download & Cross-compile Linux kernel
 
 ```
 $ git clone https://github.com/torvalds/linux.git
 $ cd linux
+$ git checkout -b v5.16 v5.16
 $ ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- make defconfig
 $ ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- make -j`nproc` Image
 ```
 
-*Kernel binary can be found at arch/arm64/boot/Image
+*Linux kernel binary can be found at arch/arm64/boot/Image*
 
 
 
@@ -38,7 +39,15 @@ $ sudo resize2fs /dev/loop16p2
 $ sudo losetup -d /dev/loop16
 ```
 
-*Replace /dev/loopN with the one shows after losetup
+*Replace /dev/loopN with the one shows after losetup*
+
+
+
+## Install Qemu emulator
+
+```
+$ sudo apt install qemu-system-arm
+```
 
 
 
@@ -55,6 +64,12 @@ $ qemu-system-aarch64 \
   -netdev "user,id=net0,hostfwd=tcp::5022-:22" \
   -no-reboot -nographic
 ```
+
+*qemu-system-aarch64 version 6.1.1*
+
+
+
+![](login.png)
 
 
 
