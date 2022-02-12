@@ -1,5 +1,13 @@
 #!/bin/bash
 
+set -eo pipefail
+
+raspberrypi_image="2022-01-28-raspios-bullseye-arm64-lite.img"
+
+if [[ ! -f ${raspberrypi_image} ]]; then
+  tar xf 2022-01-28-raspios-bullseye-arm64-lite.tar.xz
+fi
+
 qemu-system-aarch64 \
   -kernel linux-kernel-arm64-v5.16.0 \
   -m 256 -M virt \
