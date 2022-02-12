@@ -2,7 +2,7 @@
 
 spawn ./run_qemu.sh
 
-set timeout 120
+set timeout 300
 expect {
   "raspberrypi login:" {
     puts "Boot OK"
