@@ -24,11 +24,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          lfs: true
 
-      # Runs a single command using the runners shell
       - name: Installing prerequisites...
         run: sudo apt install qemu-system-arm expect
 
-      # Runs a single command using the runners shell
-      - name: Run a sanity test of rpi bootup
+      - name: Checkout LFS objects
+        run: git lfs checkout
+
+      - name: Sanity test of Raspberry Pi bootup
         run: expect ci.exp
