@@ -67,7 +67,7 @@ $ qemu-system-aarch64 \
   -no-reboot -nographic
 ```
 
-**qemu-system-aarch64 version 6.1.1*
+**Tested with qemu-system-aarch64 6.1.1*
 
 
 
