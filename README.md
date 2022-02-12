@@ -22,7 +22,7 @@ $ ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- make defconfig
 $ ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- make -j`nproc` Image
 ```
 
-*Linux kernel binary can be found at arch/arm64/boot/Image*
+**Linux kernel binary can be found at arch/arm64/boot/Image*
 
 
 
@@ -39,7 +39,7 @@ $ sudo resize2fs /dev/loop16p2
 $ sudo losetup -d /dev/loop16
 ```
 
-*Replace /dev/loopN with the one shows after losetup*
+**Replace /dev/loopN with the one shows after losetup*
 
 
 
@@ -65,7 +65,7 @@ $ qemu-system-aarch64 \
   -no-reboot -nographic
 ```
 
-*qemu-system-aarch64 version 6.1.1*
+**qemu-system-aarch64 version 6.1.1*
 
 
 
