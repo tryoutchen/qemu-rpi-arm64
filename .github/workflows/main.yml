@@ -26,5 +26,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
+      - name: Installing prerequisites...
+        run: sudo apt install qemu-system-arm expect
+
+      # Runs a single command using the runners shell
       - name: Run a sanity test of rpi bootup
-        run: sudo apt install qemu-system-arm
+        run: expect ci.exp
